@@ -1,0 +1,147 @@
+{
+  "description": "Anonymized synthetic long-form classification validation; source text and labels are not distributed.",
+  "date": "2026-09-29",
+  "environment": {
+    "instance_envelope": "trn2.3xlarge",
+    "chips": 1,
+    "tensor_parallel_size": 4,
+    "weights": "bfloat16",
+    "kv_cache": "bfloat16",
+    "host_vcpu": 12,
+    "host_memory_gib": 128
+  },
+  "server": {
+    "max_model_len": 12288,
+    "max_num_seqs": 1,
+    "client_concurrency": 4,
+    "segment_tokens": 512,
+    "prefix_caching": true,
+    "structured_json": true,
+    "gpu_memory_utilization": 0.7
+  },
+  "summary": {
+    "sample_n": 10,
+    "concurrency": 4,
+    "wall_s": 77.93410101701738,
+    "http_success_rate": 1.0,
+    "json_valid_rate": 1.0,
+    "schema_valid_rate": 1.0,
+    "ttft_s": {
+      "p50": 23.417752173525514,
+      "p95": 24.208972299710148,
+      "p99": 24.334932330345037
+    },
+    "e2e_s": {
+      "p50": 30.790753979526926,
+      "p95": 31.82627034735342,
+      "p99": 31.90809185907885
+    },
+    "prompt_tokens": 87551,
+    "completion_tokens": 1300,
+    "completion_tokens_per_s_wall": 16.6807595524344,
+    "total_tokens_per_s_wall": 1140.0785899948835,
+    "requests_per_min": 7.698812101123568
+  },
+  "warmup": {
+    "status": 200,
+    "ttft_s": 0.40625572903081775,
+    "e2e_s": 5.711978038016241,
+    "prompt_tokens": 8646,
+    "completion_tokens": 93,
+    "json_valid": true,
+    "schema_valid": true
+  },
+  "requests": [
+    {
+      "status": 200,
+      "ttft_s": 23.12265621800907,
+      "e2e_s": 30.30613248498412,
+      "prompt_tokens": 8709,
+      "completion_tokens": 126,
+      "json_valid": true,
+      "schema_valid": true
+    },
+    {
+      "status": 200,
+      "ttft_s": 16.368765374005307,
+      "e2e_s": 23.27508105803281,
+      "prompt_tokens": 8696,
+      "completion_tokens": 121,
+      "json_valid": true,
+      "schema_valid": true
+    },
+    {
+      "status": 200,
+      "ttft_s": 23.408471614005975,
+      "e2e_s": 30.68529028102057,
+      "prompt_tokens": 8722,
+      "completion_tokens": 128,
+      "json_valid": true,
+      "schema_valid": true
+    },
+    {
+      "status": 200,
+      "ttft_s": 23.992149670957588,
+      "e2e_s": 31.460558605962433,
+      "prompt_tokens": 8736,
+      "completion_tokens": 131,
+      "json_valid": true,
+      "schema_valid": true
+    },
+    {
+      "status": 200,
+      "ttft_s": 23.647086138022132,
+      "e2e_s": 31.701265259995125,
+      "prompt_tokens": 8852,
+      "completion_tokens": 141,
+      "json_valid": true,
+      "schema_valid": true
+    },
+    {
+      "status": 200,
+      "ttft_s": 8.083699990995228,
+      "e2e_s": 15.99623883300228,
+      "prompt_tokens": 8871,
+      "completion_tokens": 138,
+      "json_valid": true,
+      "schema_valid": true
+    },
+    {
+      "status": 200,
+      "ttft_s": 24.01653336401796,
+      "e2e_s": 30.89621767803328,
+      "prompt_tokens": 8663,
+      "completion_tokens": 120,
+      "json_valid": true,
+      "schema_valid": true
+    },
+    {
+      "status": 200,
+      "ttft_s": 24.36642233800376,
+      "e2e_s": 31.928547237010207,
+      "prompt_tokens": 8815,
+      "completion_tokens": 133,
+      "json_valid": true,
+      "schema_valid": true
+    },
+    {
+      "status": 200,
+      "ttft_s": 23.427032733045053,
+      "e2e_s": 31.03836422599852,
+      "prompt_tokens": 8799,
+      "completion_tokens": 134,
+      "json_valid": true,
+      "schema_valid": true
+    },
+    {
+      "status": 200,
+      "ttft_s": 0.40141193801537156,
+      "e2e_s": 7.711212293012068,
+      "prompt_tokens": 8688,
+      "completion_tokens": 128,
+      "json_valid": true,
+      "schema_valid": true
+    }
+  ],
+  "quality_note": "Task-label accuracy is intentionally omitted because the label taxonomy is not public."
+}

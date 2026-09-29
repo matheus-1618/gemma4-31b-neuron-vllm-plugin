@@ -1,0 +1,26 @@
+{
+  "description": "Sanitized chip-level HBM samples; runtime PIDs, host metadata and raw monitor records omitted.",
+  "sample_interval_s": 5,
+  "chip_hbm_gib": [
+    72.798003,
+    72.79444,
+    72.795109,
+    72.795109,
+    72.795779,
+    72.795779,
+    72.795779,
+    72.795779,
+    72.795779,
+    72.795779,
+    72.793751,
+    72.796448,
+    72.796448,
+    72.796448,
+    72.796448,
+    72.796448,
+    72.796448,
+    72.796448
+  ],
+  "peak_chip_hbm_gib": 72.798003,
+  "peak_per_logical_core_gib": 18.19950075
+}

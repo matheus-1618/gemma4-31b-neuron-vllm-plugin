@@ -1,0 +1,11 @@
+Gemma4-31B Neuron vLLM plugin — single-chip adaptations
+
+This repository includes Gemma4 model-integration files adapted from:
+  Armin Agha-Ebrahim, Armin-Neuron
+  https://github.com/arminagha1234/Armin-Neuron
+  Source path: gemma4-31b/vllm-neuron-4k_16k_32k_64_PublicVLLM/serving_pkg/gemma4
+  Source commit: fc1af21a8620c97e6f0d67f48f89a8388a569808
+
+The included source files carry SPDX-License-Identifier: Apache-2.0. The optional gemma4_flash_prefill_v2.py file from the source repository is not redistributed here because it did not carry an SPDX identifier at the referenced commit. The default execution path does not require that optional module.
+
+Single-chip TP=4 configuration, MLP fallback adaptation, safety checks, tests and documentation were added for this repository.
