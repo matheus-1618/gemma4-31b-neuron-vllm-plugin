@@ -8,9 +8,13 @@ Experimental text-only `google/gemma-4-31b-it` integration for the public [vLLM-
 
 The Apache-2.0 model-integration files in `serving_pkg/gemma4` are adapted from [Armin Agha-Ebrahim's public Armin-Neuron Gemma4 work](https://github.com/arminagha1234/Armin-Neuron/tree/fc1af21a8620c97e6f0d67f48f89a8388a569808/gemma4-31b/vllm-neuron-4k_16k_32k_64_PublicVLLM). See [`NOTICE`](NOTICE) for the exact source path and commit. Single-chip configuration, TP=4 fallback handling, safety checks and public synthetic validation were added here.
 
+## When to use this repository
+
+Use it to serve Gemma4-31B in BF16 on a single trn2.3xlarge for batch or queued workloads that need strict JSON output with a long shared prompt. It is correctness-first: the server processes one request at a time (`max_num_seqs=1`) and clients queue. For higher concurrency per instance, run several instances behind a load balancer until the scheduler limitation below is fixed.
+
 ## Why this repository
 
-The upstream reference targets larger TP=8/TP=32 configurations on trn2.48xlarge. A 31B BF16 model also fits on one Trainium2 chip, but needs a different memory and scheduler envelope:
+The upstream reference targets multi-chip TP=8/TP=32 configurations. A 31B BF16 model also fits on one Trainium2 chip, but needs a different memory and scheduler envelope:
 
 - TP=4 gives intermediate-size/rank 5,376; the current NKI MLP kernel rejects this shape, so the PyTorch fallback must use a traceable inline GELU-tanh expression.
 - `GMU=0.70` keeps enough HBM outside KV for runtime scratch.
@@ -34,7 +38,7 @@ sudo docker exec -it vllm_gemma4 bash -lc \
 python3 tests/smoke_json_concurrency.py --concurrency 4 --requests 10
 ```
 
-`CPUSET` is optional on a real trn2.3xlarge. When simulating the envelope inside a larger instance, select six physical cores plus their SMT siblings local to `/dev/neuron0`; verify topology rather than copying the example blindly.
+`CPUSET` is optional and not needed on a trn2.3xlarge.
 
 ## Validated configuration
 
