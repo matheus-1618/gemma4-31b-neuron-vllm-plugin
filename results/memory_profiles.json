@@ -1,0 +1,26 @@
+{
+  "description": "Sanitized vLLM-Neuron runtime memory summaries for Gemma4-31B TP=4 BF16; raw logs and host metadata are omitted.",
+  "date": "2026-09-29",
+  "instance_envelope": "trn2.3xlarge",
+  "profiles": [
+    {
+      "max_model_len": 12288,
+      "max_num_seqs": 4,
+      "gpu_memory_utilization": 0.70,
+      "kv_cap_fraction": 0.30,
+      "model_hbm_gib_per_core_before_kv": 15.01,
+      "kv_cache_tokens": 41363,
+      "maximum_full_length_concurrency": 3.37
+    },
+    {
+      "max_model_len": 12288,
+      "max_num_seqs": 4,
+      "gpu_memory_utilization": 0.73,
+      "kv_cap_fraction": 0.30,
+      "model_hbm_gib_per_core_before_kv": 15.01,
+      "kv_cache_tokens": 57953,
+      "maximum_full_length_concurrency": 4.72
+    }
+  ],
+  "collection": "Values parsed from Neuron HBM and vLLM KV-cache initialization messages before workload execution."
+}

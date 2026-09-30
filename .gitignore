@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*.log
+*.pem
+.env
+models/
+neff_cache/
+results/private/
