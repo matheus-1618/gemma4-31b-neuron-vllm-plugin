@@ -48,7 +48,7 @@ Queued TTFT includes time waiting behind earlier requests. The result demonstrat
 
 Armin-Neuron publishes TP=8 and TP=32 Trainium2 versus H100 TTFT measurements for Gemma4-31B at 4K–64K. See the [source documentation](https://github.com/arminagha1234/Armin-Neuron/tree/fc1af21a8620c97e6f0d67f48f89a8388a569808/gemma4-31b/vllm-neuron-4k_16k_32k_64_PublicVLLM). Those numbers show that larger Trainium2 configurations can be competitive at long-context prefill, but they are not evidence that this TP=4 configuration beats H100.
 
-For a customer-facing comparison, report identical workload quality, TTFT, TPOT, E2E, throughput, peak memory and cost per successful 1,000 requests on both the single-chip Trainium2 configuration and the selected H100 instance.
+For a comparison with GPUs, report identical workload quality, TTFT, TPOT, E2E, throughput, peak memory and cost per successful 1,000 requests on both the single-chip Trainium2 configuration and the selected H100 instance.
 
 ## Optimization priorities
 
